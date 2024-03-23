@@ -19,6 +19,7 @@
   background-color: var(--background-color, #fff);
   background-image: var(--background-gradient);
   background-size: cover;
+  background-attachment: fixed;
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-variation-settings: "wght" var(--font-weight-text, 400);
@@ -42,7 +43,7 @@
 
 .header__title {
   margin-block-end: 20px;
-  font-family: var(--accent-font, sans-serif);
+  font-family: var(--accent-font, fantasy);
   font-weight: 400;
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   text-transform: uppercase;
@@ -55,7 +56,7 @@
 
 .header__subtitle {
   margin-block-end: 24px;
-  font-family: var(--accent-font, sans-serif);
+  font-family: var(--accent-font, fantasy);
   font-weight: 400;
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
   text-transform: uppercase;
@@ -73,17 +74,20 @@
 .theme-menu__button {
   position: relative;
   border: none;
-  font-family: var(--accent-font, sans-serif);
+  font-family: var(--accent-font, fantasy);
   font-weight: 400;
   font-size: 14px;
   text-transform: uppercase;
   background: none;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
 }
 
 .theme-menu__button:disabled::before {
   content: "▶";
   position: absolute;
   margin-inline-start: -20px;
+  margin-block-start: 0px;
   animation-name: arrow-shake;
   animation-direction: alternate;
   animation-iteration-count: infinite;
@@ -93,23 +97,17 @@
 
 .theme-menu__button:disabled {
   opacity: 0.6;
-  transition-duration: 0.3s;
-  transition-timing-function: ease;
   pointer-events: none;
 }
 
 .theme-menu__button:hover {
   opacity: 0.6;
-  transition-duration: 0.3s;
-  transition-timing-function: ease;
   cursor: pointer;
 }
 
 .theme-menu__button:focus {
   outline: none;
   opacity: 0.6;
-  transition-duration: 0.3s;
-  transition-timing-function: ease;
 }
 
 .theme-menu__button::after {
@@ -147,6 +145,8 @@
 .card__image {
   display: block;
   inline-size: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .card__image-container {
@@ -161,7 +161,7 @@
   top: 25px;
   right: 25px;
   opacity: 0.5;
-  font-family: var(--accent-font, #000);
+  font-family: var(--accent-font, fantasy);
   font-size: 14px;
   font-weight: 400;
   text-shadow: 1px var(--background-color, #fff);
@@ -186,7 +186,7 @@
 }
 
 .card__text {
-  margin: 25px;
+  margin: 0 25px 25px 25px;
   font-weight: var(--font-weight-text, 400);
   font-size: 18px;
   font-style: normal;
@@ -199,7 +199,7 @@
 }
 
 .card__like-button {
-  margin: 2px 25px 25px 6px;
+  margin: 2px 25px 25px 5px;
   border: 2px solid var(--accent-color, #000);
   padding: 9px 17px;
   background: var(--background-color, #fff);
@@ -211,7 +211,7 @@
   position: relative;
   z-index: 1;
   color: var(--button-text-color, #fff);
-  font-family: var(--accent-font, sans-serif);
+  font-family: var(--accent-font, fantasy);
   font-weight: 400;
   font-size: 14px;
   line-height: 90%;
@@ -222,8 +222,16 @@
   margin-block-start: 2px;
   border: 2px solid transparent;
   background-color: transparent;
-  inline-size: 39px;
+  inline-size: 41px;
   block-size: 38px;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  transition-duration: 0.3s;
+  transition-property: border;
+  transition-timing-function: ease;
 }
 
 .card__icon-button:focus {
@@ -233,14 +241,6 @@
 .card__icon-button:focus-visible {
   border-color: var(--accent-color, #000);
   outline: none;
-  transition-duration: 0.3s;
-  transition-property: border;
-  transition-timing-function: ease;
-}
-
-.like-icon {
-  position: relative;
-  inset-inline-end: 8px;
 }
 
 .button__save {
@@ -272,6 +272,13 @@
   }
 }
 
+.button-animation {
+  position: relative;
+  transition-duration: 0.3s;
+  transition-property: box-shadow;
+  transition-timing-function: ease;
+}
+
 .button-animation:focus {
   outline: none;
 }
@@ -279,13 +286,6 @@
 .button-animation:focus-visible {
   box-shadow: 2px 2px 0px var(--accent-color, #000);
   outline: none;
-  transition-duration: 0.3s;
-  transition-property: box-shadow;
-  transition-timing-function: ease;
-}
-
-.button-animation {
-  position: relative;
 }
 
 .button-animation::after {
@@ -313,13 +313,13 @@
 
 .dialog__save {
   border: 2px solid var(--accent-color, #000);
-  padding: 30px;
+  padding: 30px 30px 28px 30px;
   background-color: var(--background-color, #fff);
 }
 
 @media (width <= 375px) {
   .dialog__save {
-    padding: 30px 40px;
+    padding: 30px 30px 28px 38px;
   }
 }
 
@@ -341,12 +341,12 @@
 
 .dialog__text {
   color: var(--accent-color, #000);
-  font-family: var(--accent-font, sans-serif);
+  font-family: var(--accent-font, fantasy);
   font-weight: 400;
   font-size: 14px;
   line-height: 150%;
   text-transform: uppercase;
-  inline-size: 198px;
+  inline-size: 209px;
 }
 
 .dialog__button {
@@ -354,43 +354,43 @@
   border: 2px solid var(--accent-color, #000);
   padding: 7px 15px;
   background-color: var(--background-color, #fff);
-  inline-size: 289px;
+  inline-size: 292px;
 }
 
 @media (width <= 375px) {
   .dialog__button {
-    inline-size: 253px;
+    inline-size: 256px;
   }
 }
 
-.card__image-00 {
+.filter-invert {
   filter: invert(100%);
 }
 
-.card__image-11 {
+.filter-saturate {
   filter: saturate(200%);
 }
 
-.card__image-12 {
+.filter-contrast {
   filter: contrast(150%);
 }
 
-.card__image-21 {
+.filter-sepia {
   filter: sepia(0.75);
 }
 
-.card__image-22 {
+.filter-blur {
   filter: blur(2px);
 }
 
-.card__image-31 {
+.filter-brightness {
   filter: brightness(150%);
 }
 
-.card__image-32 {
+.filter-grayscale {
   filter: grayscale(100%);
 }
 
-.card__image-41 {
+.filter-multiple {
   filter: hue-rotate(0.25turn) saturate(150%) brightness(125%);
 }
