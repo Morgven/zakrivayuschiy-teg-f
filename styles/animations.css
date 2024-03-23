@@ -13,7 +13,7 @@
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
 
-@keyframes shake {
+@keyframes arrow-shake {
   0% {
     transform: translateX(0px);
   }
@@ -22,6 +22,126 @@
   }
 }
 
+@keyframes scale {
+  0% {
+    transform: scale(1);
+    transform-origin: center;
+  }
+
+  100% {
+    transform: scale(1.5);
+    transform-origin: center;
+  }
+}
+
+@keyframes sparks-opacity {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 .sparks {
   opacity: 0;
+}
+
+.core {
+  fill: transparent;
+  transition-delay: 0.03s;
+  transition-duration: 0.3s;
+  transition-property: fill;
+  transition-timing-function: linear;
+}
+
+.card__icon-button:hover .core {
+  fill: var(--heart-counter-color, #000);
+  transition-delay: 0s;
+  transition-duration: 0.3s;
+  transition-property: fill;
+  transition-timing-function: linear;
+}
+
+.main-body {
+  fill: transparent;
+  transition-delay: 0s;
+  transition-duration: 0.3s;
+  transition-property: fill;
+  transition-timing-function: linear;
+}
+
+.card__icon-button:hover .main-body {
+  fill: var(--heart-counter-color, #000);
+  transition-delay: 0.05s;
+  transition-duration: 0.3s;
+  transition-property: fill;
+  transition-timing-function: linear;
+}
+
+.card__icon-button:active .core {
+  fill: var(--heart-sparks-color, #ff0000);
+  transition-delay: 0s;
+  transition-duration: 0.3s;
+  transition-property: fill;
+  transition-timing-function: linear;
+}
+
+.card__icon-button:active .main-body {
+  fill: var(--heart-sparks-color, #ff0000);
+  transition-delay: 0.05s;
+  transition-duration: 0.3s;
+  transition-property: fill;
+  transition-timing-function: linear;
+}
+
+.like-icon.is-liked .core {
+  fill: var(--heart-sparks-color, #ff0000);
+  transition-delay: 0s;
+  transition-duration: 0.3s;
+  transition-property: fill;
+  transition-timing-function: linear;
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--heart-sparks-color, #ff0000);
+  transition-delay: 0.05s;
+  transition-duration: 0.3s;
+  transition-property: fill;
+  transition-timing-function: linear;
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--heart-sparks-color, #ff0000);
+  transition-delay: 0.06s;
+  transition-duration: 0.3s;
+  transition-property: fill;
+  transition-timing-function: linear;
+}
+
+.like-icon.is-liked .heart {
+  animation-name: scale;
+  animation-delay: 0.1s;
+  animation-direction: alternate;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 0.3s;
+}
+
+.like-icon.is-liked .sparks {
+  animation-name: sparks-opacity;
+  animation-delay: 0.3s;
+  animation-direction: alternate;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 0.3s;
+}
+
+.contour {
+  fill: var(--heart-counter-color, #000);
+  transition-delay: 0s;
+  transition-duration: 0.1s;
+  transition-property: fill;
+  transition-timing-function: linear;
 }

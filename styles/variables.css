@@ -1,7 +1,7 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 :root {
-  --main-font: 'Inter-Variable';
-  --accent-font: 'PressStart2P';
+  --main-font: "Inter-Variable";
+  --accent-font: "PressStart2P";
   --font-weight-text: 400;
   --font-weight-title: 700;
   --accent-color: #000;
@@ -12,5 +12,5 @@
     linear-gradient(180deg, #e7e7e7 0.01%, #1a1a1a);
   --button-text-color: #fff;
   --heart-counter-color: #000;
-  --heart-sparks-color: #FF0000;
+  --heart-sparks-color: #ff0000;
 }
