@@ -46,6 +46,11 @@
   font-weight: 400;
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   text-transform: uppercase;
+  text-decoration: none;
+}
+
+.header__title:focus {
+  outline: none;
 }
 
 .header__subtitle {
@@ -169,10 +174,14 @@
   }
 }
 
-@supports (-webkit-text-stroke: 1px var(--background-color, #fff)) {
+@supports (
+  (-webkit-text-stroke: 1px var(--background-color, #fff)) or
+    (text-stroke: 1px var(--background-color, #fff))
+) {
   .card__watermark {
     text-shadow: none;
     -webkit-text-stroke: 1px var(--background-color, #fff);
+    text-stroke: 1px var(--background-color, #fff);
   }
 }
 
@@ -379,7 +388,7 @@
 }
 
 .card__image-32 {
- filter: grayscale(100%);
+  filter: grayscale(100%);
 }
 
 .card__image-41 {
