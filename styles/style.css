@@ -141,14 +141,14 @@
 
 .card__image {
   display: block;
-  margin-block-end: 25px;
-  border-block-start: 2px solid var(--accent-color, #000);
-  border-block-end: 2px solid var(--accent-color, #000);
   inline-size: 100%;
 }
 
 .card__image-container {
   position: relative;
+  border-block-start: 2px solid var(--accent-color, #000);
+  border-block-end: 2px solid var(--accent-color, #000);
+  margin-block-end: 25px;
 }
 
 .card__watermark {
@@ -158,7 +158,7 @@
   opacity: 0.5;
   font-family: var(--accent-font, #000);
   font-size: 14px;
-  text-transform: uppercase;
+  font-weight: 400;
   text-shadow: 1px var(--background-color, #fff);
   mix-blend-mode: hard-light;
 }
@@ -352,4 +352,36 @@
   .dialog__button {
     inline-size: 253px;
   }
+}
+
+.card__image-00 {
+  filter: invert(100%);
+}
+
+.card__image-11 {
+  filter: saturate(200%);
+}
+
+.card__image-12 {
+  filter: contrast(150%);
+}
+
+.card__image-21 {
+  filter: sepia(0.75);
+}
+
+.card__image-22 {
+  filter: blur(2px);
+}
+
+.card__image-31 {
+  filter: brightness(150%);
+}
+
+.card__image-32 {
+ filter: grayscale(100%);
+}
+
+.card__image-41 {
+  filter: hue-rotate(0.25turn) saturate(150%) brightness(125%);
 }
