@@ -1,3 +1,3 @@
-https://github.com/Morgven/zakrivayuschiy-teg-f
+https://github.com/krlgrek/zakrivayuschiy-teg-f
 
-https://morgven.github.io/zakrivayuschiy-teg-f/
+https://krlgrek.github.io/zakrivayuschiy-teg-f/
